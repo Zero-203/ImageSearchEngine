@@ -1,0 +1,30 @@
+# ImageSearchEngine 项目依赖（Python 3.13 环境）
+# 使用 pip 安装：pip install -r requirements.txt
+#
+# 注意事项：
+# - PyTorch 因硬件加速（CUDA/CPU）需单独安装，请根据下方指南操作
+# - 安装顺序建议：先装 PyTorch，再装其他依赖
+# - 本列表基于当前开发环境版本，确保兼容性
+
+boto3==1.43.14
+gradio==6.12.0
+huggingface_hub==1.10.2
+Pillow==12.1.1
+python-dotenv==1.2.2
+tqdm==4.67.3
+transformers==5.9.0
+upstash-vector==0.8.0
+
+# ==================== PyTorch 安装指南 ====================
+# 根据你的系统和硬件选择以下命令之一执行（在安装 requirements 前或后均可）：
+#
+# 1. NVIDIA GPU + CUDA 12.6（推荐，与本项目开发环境一致）：
+#    pip install torch==2.11.0+cu126 torchvision==0.26.0+cu126 --index-url https://download.pytorch.org/whl/cu126
+#
+# 2. CPU 仅模式（无 GPU 或测试用）：
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+# 验证安装：
+#    python -c "import torch; print('PyTorch:', torch.__version__); print('CUDA available:', torch.cuda.is_available())"
+#
+# 如果 CUDA 版本不同，请访问 https://pytorch.org/get-started/locally/ 获取对应安装命令
